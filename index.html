@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD com Filtros e Edição</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- FontAwesome para o ícone de "X" -->
+</head>
+<body>
+    <header>
+        <h1 class="titulo">PAINEL DE AGENDAMENTOS </h1>
+    </header>
+    <main>
+    <div class="container">
+
+        <!-- Filtros de pesquisa -->
+        <div class="filters">
+            <input type="text" id="filterName" placeholder="Filtrar por Nome">
+            <input type="date" id="filterDate" placeholder="Filtrar por Data">
+            <button id="filterBtn">Aplicar Filtro</button>
+        </div>
+
+        <!-- Tabela para exibir os dados -->
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Data de Nascimento</th>
+                    <th>E-mail</th>
+                    <th>Telefone</th>
+                    <th>Possui Alergia?</th>
+                    <th>Direitos de Imagem?</th>
+                    <th>Data Agendamento</th>
+                    <th>Faixa de Horário</th>
+                    <th>Ações</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Os dados serão carregados dinamicamente via JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modal de Edição -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Editar Registro</h2>
+            <form id="editForm">
+                <label for="editNome">Nome:</label>
+                <input type="text" id="editNome" name="editNome" disabled>
+
+                <label for="editNascimento">Data de Nascimento:</label>
+                <input type="date" id="editNascimento" name="editNascimento" disabled>
+
+                <label for="editEmail">E-mail:</label>
+                <input type="email" id="editEmail" name="editEmail" disabled>
+
+                <label for="editTelefone">Telefone:</label>
+                <input type="text" id="editTelefone" name="editTelefone" disabled>
+
+                <label for="editAlergia">Possui Alergia?</label>
+                <input type="text" id="editAlergia" name="editAlergia" disabled>
+
+                <label for="editImagem">Direitos de Imagem?</label>
+                <input type="text" id="editImagem" name="editImagem" disabled>
+
+                <label for="editDataCadastro">Data de Cadastro:</label>
+                <input type="date" id="editDataCadastro" name="editDataCadastro" required>
+
+                <label for="editHorario">Faixa de Horário:</label>
+                <input type="time" id="editHorario" name="editHorario" required>
+
+                <button type="submit">Salvar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Confirmação de Cancelamento -->
+    <div id="cancelModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Deseja realmente cancelar o agendamento?</h2>
+            <button id="confirmCancel">Sim</button>
+            <button id="declineCancel">Não</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</main>
+</body>
+</html>
